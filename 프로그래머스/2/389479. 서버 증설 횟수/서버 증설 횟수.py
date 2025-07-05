@@ -14,7 +14,7 @@ def solution(players, m, k):
             queue.popleft()
             
         totalServer = len(queue)
-        need = players[i]//m
+        need = 0 if players[i] < m else players[i]//m
         
         print(totalServer, need)
         
