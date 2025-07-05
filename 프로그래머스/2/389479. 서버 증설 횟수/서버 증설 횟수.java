@@ -17,7 +17,7 @@ class Solution {
             }
             
             totalServer = queue.size();
-            need = (int) Math.ceil(players[i]/m);
+            need = players[i] < m ? 0 : players[i]/m;
             
             // 서버 증설이 필요한 경우 큐에 추가
             if (need > totalServer) {
