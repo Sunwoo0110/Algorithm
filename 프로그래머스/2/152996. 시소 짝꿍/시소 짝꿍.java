@@ -20,6 +20,7 @@ class Solution {
         // 완탐
         for(int i=0; i<n; ++i){
             for(int j=i+1; j<n; ++j){
+                if (list.get(i)*2 < list.get(j)) { break; }
                 if(list.get(i)*4 == list.get(j)*2 || list.get(i)*3 == list.get(j)*2 || list.get(i)*4 == list.get(j)*3) { 
                     answer += map.get(list.get(i))*map.get(list.get(j));
                 }

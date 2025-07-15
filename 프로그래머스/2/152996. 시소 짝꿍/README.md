@@ -1,10 +1,10 @@
 # [level 2] 시소 짝꿍 - 152996 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/152996?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/152996?language=java) 
 
 ### 성능 요약
 
-메모리: 12.7 MB, 시간: 66.68 ms
+메모리: 106 MB, 시간: 68.22 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 07월 15일 18:57:25
+2025년 07월 15일 18:58:10
 
 ### 문제 설명
 
