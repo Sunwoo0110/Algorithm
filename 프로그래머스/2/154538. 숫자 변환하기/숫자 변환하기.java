@@ -26,6 +26,24 @@ class Solution {
             x++;
         }
         
+        // BFS
+//         Queue<Integer> queue = new ArrayDeque<>();
+//         queue.add(x);
+
+//         while (!queue.isEmpty()) {
+//             int cur = queue.poll();
+//             // 이미 y에 도달한 경우 더 이상 진행X
+//             if (cur == y) return dp[cur];
+//             for (int next : new int[]{cur+n, cur*2, cur*3}) {
+//                 if (next > y) continue;
+//                 if (dp[next] == -1 || dp[next] > dp[cur] + 1) {
+//                     dp[next] = dp[cur]+1;
+//                     queue.add(next);
+//                 }
+//             }
+//         }
+//         return -1;
+        
         return dp[y];
     }
 }
