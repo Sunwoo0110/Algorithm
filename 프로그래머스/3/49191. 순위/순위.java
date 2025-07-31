@@ -25,13 +25,9 @@ class Solution {
             Deque<Integer> queue = new ArrayDeque<>();
             queue.offerLast(i);
             
-            // System.out.println("INDEX: " + i);
-            
             while(!queue.isEmpty()){
                 int curr = queue.pollFirst();
                 visited[curr] = true;
-                
-                // System.out.println(curr);
                 
                 for(int next: winGraph.get(curr)){
                     if(visited[next] == false){
@@ -45,8 +41,6 @@ class Solution {
             while(!queue.isEmpty()){
                 int curr = queue.pollFirst();
                 visited[curr] = true;
-                
-                // System.out.println(curr);
                 
                 for(int next: loseGraph.get(curr)){
                     if(visited[next] == false){
