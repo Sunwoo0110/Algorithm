@@ -5,20 +5,17 @@ def solution(n):
     right = 1
     s = 1
     
-    while left <= right:
-        while True:       
-            if s >= n:
-                break
-            right += 1
-            s += right
-        
-        if right > n:
-            break
-        
+    ## 투포인터
+    while left <= n:
         if s == n:
             answer += 1
-        
-        s -= left
-        left += 1
+            s -= left
+            left += 1
+        elif s < n:
+            right += 1
+            s += right
+        else: ## s > n
+            s -= left
+            left += 1
     
     return answer
