@@ -12,18 +12,18 @@ def solution(info, query):
     counts = [[[[[0]*(MAX_SCORE+1) for _ in range(2)] for _ in range(2)] for _ in range(2)] for _ in range(3)]
 
 
-    ## info 적재: 24조합만 점수 카운팅
+    ## info 전처리: 24조합만 점수 카운팅
     for row in info:
         l, p, c, f, s = row.split()
         s = int(s)
         counts[L_MAP[l]][P_MAP[p]][C_MAP[c]][F_MAP[f]][s] += 1
 
-    ## suffix 합: arr[x] = (점수 >= x) 명
+    ## 누적합: arr[x] = 점수가 x 이상인 인원 수
     for li in range(3):
         for pi in range(2):
             for ci in range(2):
                 for fi in range(2):
-                    arr = counts[li][pi][ci][fi]
+                    arr = counts[li][pi][ci][fi] ## 0~100,000
                     running = 0
                     for sc in range(MAX_SCORE, -1, -1):
                         running += arr[sc]
