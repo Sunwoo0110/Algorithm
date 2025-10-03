@@ -23,17 +23,14 @@ def solution(friends, gifts):
     
     for i in range(n):
         for j in range(i+1, n):
-            
-            if (gift_num[i][j] == 0 and gift_num[j][i] == 0) or (gift_num[i][j] != 0 and gift_num[j][i] != 0 and gift_num[i][j] == gift_num[j][i]):
+            if gift_num[i][j] > gift_num[j][i]:   # i가 더 많이 줌
+                get_gift[i] += 1
+            elif gift_num[i][j] < gift_num[j][i]: # j가 더 많이 줌
+                get_gift[j] += 1
+            else:  # 주고받은 개수 같음
                 if gift_rate[i] > gift_rate[j]:
                     get_gift[i] += 1
                 elif gift_rate[i] < gift_rate[j]:
-                    get_gift[j] += 1
-                    
-            elif gift_num[i][j] != 0 or gift_num[j][i] != 0:
-                if gift_num[i][j] > gift_num[j][i]:
-                    get_gift[i] += 1
-                elif gift_num[i][j] < gift_num[j][i]:
                     get_gift[j] += 1
                     
     answer = max(get_gift)
