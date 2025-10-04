@@ -1,38 +1,39 @@
 def solution(users, emoticons):
-    rates = [10, 20, 30, 40]
-    m = len(emoticons)
-
-    disc = [[price*(100-r)//100 for r in rates] for price in emoticons]
-
-    res_plus_cnt, res_price = -1, -1
-    disc_choice = [0]*m ## 각 이모티콘 할인율 저장
-
-    def dfs(idx):
-        nonlocal res_plus_cnt, res_price
-
-        if idx == m:
-            plus_cnt = 0
-            price = 0
-            
-            for need_rate, need_price in users:
-                spend = 0
-                for i in range(m):
-                    if rates[disc_choice[i]] >= need_rate: ## 기준 할인 이상만 구매
-                        spend += disc[i][disc_choice[i]]
-                if spend >= need_price: ## 기준 금액 넘으면 이모티콘 플러스
-                    plus_cnt += 1
-                else:
-                    price += spend
-
-            ## 조건 우선순위 비교
-            if (plus_cnt > res_plus_cnt) or (plus_cnt == res_plus_cnt and price > res_price):
-                res_plus_cnt, res_price = plus_cnt, price
-            return
-
-        for r in range(4):
-            disc_choice[idx] = r
-            dfs(idx+1)
-
-    dfs(0)
-    return [res_plus_cnt, res_price]
-
+    answer = [0, 0]
+    n = len(emoticons)
+    
+    path = [[False for _ in range(4)] for _ in range(n)]
+    dis_dict = {0: 10, 1: 20, 2: 30, 3: 40}
+    
+    def calc_user(path):
+        plus_cnt, total_money = 0, 0
+        for discount, max_money in users:
+            user_money = 0
+            for i in range(n):
+                for j in range(4):
+                    if path[i][j] and dis_dict[j] >= discount:
+                        user_money += emoticons[i]*(100-dis_dict[j])/100
+            if user_money >= max_money:
+                plus_cnt += 1
+            else:
+                total_money += user_money
+        
+        return [plus_cnt, total_money]      
+    
+    def dfs(idx, path):
+        nonlocal answer
+        
+        if idx == n-1:
+            ## 이모티콘 금액, 가입 계산
+            result = calc_user(path)
+            if result[0] > answer[0] or (result[0] == answer[0] and result[1] > answer[1]):
+                answer = result
+        else:
+            for nxt in range(4):
+                path[idx+1][nxt] = True
+                dfs(idx+1, path)
+                path[idx+1][nxt] = False
+    
+    dfs(-1, path)
+    
+    return answer
