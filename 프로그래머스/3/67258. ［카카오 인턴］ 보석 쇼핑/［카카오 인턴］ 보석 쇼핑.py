@@ -1,33 +1,46 @@
 from collections import defaultdict
 
 def solution(gems):
-    answer = [0, 100000]
-    ## 투포인터
-    left, right = 0, 0
+    answer = []
+    total_num = len(list(set(gems)))
+    n = len(gems)
     
-    gems_set = set(gems)
-    gems_dic = defaultdict(int)
+    left, right = 0, 1
+    min_len = n
     
-    cnt = 0 ## 현재 구간의 보석 종류 개수
+    curr_num = 1
+    curr_len = 1   
+    curr_dict = defaultdict(int)
+    curr_dict[gems[0]] += 1
     
-    while right < len(gems):
+    if total_num == 1:
+        return [1, 1]
+    
+    while right < n:
+        if gems[right] not in curr_dict.keys():
+            curr_num += 1
         
-        if gems_dic[gems[right]] == 0:
-            cnt += 1
+        curr_dict[gems[right]] += 1
             
-        gems_dic[gems[right]] += 1
-        
-        ## 다 포함
-        while cnt == len(gems_set):
-            if answer[1]-answer[0] > right-left:
-                answer[0], answer[1] = left+1, right+1
-                
-            ## left 이동
-            gems_dic[gems[left]] -= 1
-            if gems_dic[gems[left]] == 0:
-                cnt -= 1
+        if curr_num == total_num:
+            while left < right:
+                if curr_dict[gems[left]] == 1:
+                    break
+
+                curr_len -= 1
+                curr_dict[gems[left]] -= 1
+                left += 1
+
+            if curr_len < min_len:
+                answer = [left+1, right+1]
+                min_len = curr_len
+
+            del curr_dict[gems[left]]
             left += 1
-            
+            curr_num -= 1
+            curr_len -= 1
+        
         right += 1
-    
+        curr_len += 1
+        
     return answer
