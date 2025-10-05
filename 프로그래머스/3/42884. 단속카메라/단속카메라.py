@@ -1,14 +1,12 @@
 def solution(routes):
     answer = 0
     
-    routes.sort(key=lambda x: x[1])
-    last_cam = -30001
+    prev = -30001
     
-    for route in routes:
-        s, e = route
-        
-        if s > last_cam:
+    routes.sort(key=lambda x: x[1])
+    for a, b in routes:
+        if prev < a:
             answer += 1
-            last_cam = e
-        
+            prev = b
+    
     return answer
