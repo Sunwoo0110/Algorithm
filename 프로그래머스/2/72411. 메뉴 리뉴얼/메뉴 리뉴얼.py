@@ -1,44 +1,41 @@
+from collections import Counter
+
+def make_combinations(arr, c):
+    result = []
+    
+    def dfs(start, path):
+        if len(path) == c:
+            result.append(''.join(path))
+            return
+        
+        for i in range(start, len(arr)):
+            dfs(i+1, path+[arr[i]])
+    
+    dfs(0, [])
+    return result
+
 
 def solution(orders, course):
     answer = []
     
-    combination = []
-    total_comb = set()
+    for c in course:
+        counter = Counter()
+        
+        for order in orders:
+            if len(order) < c:
+                continue
+                
+            arr = sorted(list(order))
+            combs = make_combinations(arr, c)
+            for comb in combs:
+                counter[comb] += 1
+        
+        # 가장 많이 나온 조합 찾기
+        if counter:
+            max_cnt = max(counter.values())
+            if max_cnt >= 2:
+                for k, v in counter.items():
+                    if v == max_cnt:
+                        answer.append(k)
     
-    for order in orders:
-        n = len(order)
-        comb = []
-        for bit in range(1, 1<<n):
-            menu = ""
-            for i in range(n):
-                if (bit&(1<<i)) != 0:
-                    menu += order[i]
-            if len(menu) in course:
-                menu = "".join(sorted(menu))
-                comb.append(menu)
-                total_comb.add(menu)
-        combination.append(comb)
-    
-    for crs in course:
-        max_num = 0
-        max_tc = []
-        for tc in total_comb:
-            if crs == len(tc):
-                cnt = 0
-                for comb in combination:
-                    if tc in comb:
-                        cnt += 1
-
-                if max_num < cnt and cnt >= 2:
-                    max_num = cnt
-                    max_tc = []
-                    max_tc.append(tc)
-                elif max_num == cnt and cnt >= 2:
-                    max_tc.append(tc)
-                    
-        for mt in max_tc:
-            answer.append(mt)
-            
-    answer.sort()
-    
-    return answer
+    return sorted(answer)
