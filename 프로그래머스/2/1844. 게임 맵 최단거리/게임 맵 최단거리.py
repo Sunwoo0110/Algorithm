@@ -2,25 +2,27 @@ from collections import deque
 
 def solution(maps):
     answer = -1
-    
-    path = [[0,1], [0,-1], [1,0], [-1,0]]
-    visited = set()
-    visited.add((0,0))
-    
     n, m = len(maps), len(maps[0])
     
-    queue = deque([(0,0,1)])
+    visited = [[False]*m for _ in range(n)]
+    
+    queue = deque()
+    queue.append((0, 0, 1)) ## x, y, 현재 길이
+    
+    visited[0][0] = True
+    
+    dirs = [[1, 0], [-1, 0], [0, 1], [0, -1]]
     
     while queue:
-        x, y, distance = queue.popleft()
+        x, y, l = queue.popleft()
         
         if x == n-1 and y == m-1:
-            return distance
+            return l
         
-        for dx, dy in path:
+        for dx, dy in dirs:
             nx, ny = x+dx, y+dy
-            if nx >= 0 and nx < n and ny >= 0 and ny < m and (nx, ny) not in visited and maps[nx][ny] == 1:
-                visited.add((nx, ny))
-                queue.append((nx, ny, distance+1))
+            if nx >= 0 and nx < n and ny >= 0 and ny < m and maps[nx][ny] == 1 and not visited[nx][ny]:
+                visited[nx][ny] = True
+                queue.append((nx, ny, l+1))
         
     return answer
