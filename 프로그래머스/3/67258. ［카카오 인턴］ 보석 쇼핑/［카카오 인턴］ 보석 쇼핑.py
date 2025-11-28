@@ -1,46 +1,33 @@
 from collections import defaultdict
 
 def solution(gems):
-    answer = []
-    total_num = len(list(set(gems)))
-    n = len(gems)
+    answer = [len(gems), 2*len(gems)]
     
-    left, right = 0, 1
-    min_len = n
+    left, right = 0, 0
+    gems_dict = defaultdict(int) ## 현재 구간 보석 종류 및 개수
+    gems_num = len(set(gems)) ## 전체 보석 종류 수
+    curr_num = 0 ## 현재 구간 보석 종류 수
     
-    curr_num = 1
-    curr_len = 1   
-    curr_dict = defaultdict(int)
-    curr_dict[gems[0]] += 1
-    
-    if total_num == 1:
-        return [1, 1]
-    
-    while right < n:
-        if gems[right] not in curr_dict.keys():
+    while right < len(gems):
+        if gems_dict[gems[right]] == 0:
             curr_num += 1
+        gems_dict[gems[right]] += 1
         
-        curr_dict[gems[right]] += 1
-            
-        if curr_num == total_num:
-            while left < right:
-                if curr_dict[gems[left]] == 1:
+        if curr_num == gems_num:
+            while True:
+                if gems_dict[gems[left]] == 1:
                     break
-
-                curr_len -= 1
-                curr_dict[gems[left]] -= 1
+                gems_dict[gems[left]] -= 1
                 left += 1
-
-            if curr_len < min_len:
-                answer = [left+1, right+1]
-                min_len = curr_len
-
-            del curr_dict[gems[left]]
+            
+            if answer[1]-answer[0] > right-left:
+                answer[0], answer[1] = left+1, right+1
+            
+            gems_dict[gems[left]] -= 1
             left += 1
             curr_num -= 1
-            curr_len -= 1
         
         right += 1
-        curr_len += 1
-        
+            
+    
     return answer
