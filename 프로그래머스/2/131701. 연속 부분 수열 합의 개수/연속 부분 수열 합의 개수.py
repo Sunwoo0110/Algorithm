@@ -6,8 +6,12 @@ def solution(elements):
     
     line_elements = elements*2
     
-    for i in range(1, n+1):
-        for j in range(n):
-            sub_elem_set.add(sum(line_elements[j:j+i]))
+    for length in range(1, n+1):
+        total = sum(line_elements[:length])
+        
+        for i in range(n):
+            total = total-line_elements[i]+line_elements[i+length]
+            sub_elem_set.add(total)
+        
     answer = len(sub_elem_set)
     return answer
