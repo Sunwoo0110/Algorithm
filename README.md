@@ -55,4 +55,20 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/Sunwoo0110/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0347-top-k-frequent-elements](https://github.com/Sunwoo0110/Algorithm/tree/master/0347-top-k-frequent-elements) |
+## Tree
+|  |
+| ------- |
+| [0098-validate-binary-search-tree](https://github.com/Sunwoo0110/Algorithm/tree/master/0098-validate-binary-search-tree) |
+## Depth-First Search
+|  |
+| ------- |
+| [0098-validate-binary-search-tree](https://github.com/Sunwoo0110/Algorithm/tree/master/0098-validate-binary-search-tree) |
+## Binary Search Tree
+|  |
+| ------- |
+| [0098-validate-binary-search-tree](https://github.com/Sunwoo0110/Algorithm/tree/master/0098-validate-binary-search-tree) |
+## Binary Tree
+|  |
+| ------- |
+| [0098-validate-binary-search-tree](https://github.com/Sunwoo0110/Algorithm/tree/master/0098-validate-binary-search-tree) |
 <!---LeetCode Topics End-->
