@@ -10,6 +10,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0242-valid-anagram](https://github.com/Sunwoo0110/Algorithm/tree/master/0242-valid-anagram) |
 | [0347-top-k-frequent-elements](https://github.com/Sunwoo0110/Algorithm/tree/master/0347-top-k-frequent-elements) |
 | [0424-longest-repeating-character-replacement](https://github.com/Sunwoo0110/Algorithm/tree/master/0424-longest-repeating-character-replacement) |
+| [0560-subarray-sum-equals-k](https://github.com/Sunwoo0110/Algorithm/tree/master/0560-subarray-sum-equals-k) |
 ## String
 |  |
 | ------- |
@@ -32,6 +33,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/Sunwoo0110/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0347-top-k-frequent-elements](https://github.com/Sunwoo0110/Algorithm/tree/master/0347-top-k-frequent-elements) |
+| [0560-subarray-sum-equals-k](https://github.com/Sunwoo0110/Algorithm/tree/master/0560-subarray-sum-equals-k) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -71,4 +73,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0098-validate-binary-search-tree](https://github.com/Sunwoo0110/Algorithm/tree/master/0098-validate-binary-search-tree) |
+## Prefix Sum
+|  |
+| ------- |
+| [0560-subarray-sum-equals-k](https://github.com/Sunwoo0110/Algorithm/tree/master/0560-subarray-sum-equals-k) |
 <!---LeetCode Topics End-->
