@@ -34,6 +34,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0215-kth-largest-element-in-an-array](https://github.com/Sunwoo0110/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0347-top-k-frequent-elements](https://github.com/Sunwoo0110/Algorithm/tree/master/0347-top-k-frequent-elements) |
 | [0560-subarray-sum-equals-k](https://github.com/Sunwoo0110/Algorithm/tree/master/0560-subarray-sum-equals-k) |
+| [0875-koko-eating-bananas](https://github.com/Sunwoo0110/Algorithm/tree/master/0875-koko-eating-bananas) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -69,6 +70,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0098-validate-binary-search-tree](https://github.com/Sunwoo0110/Algorithm/tree/master/0098-validate-binary-search-tree) |
+| [0875-koko-eating-bananas](https://github.com/Sunwoo0110/Algorithm/tree/master/0875-koko-eating-bananas) |
 ## Binary Tree
 |  |
 | ------- |
