@@ -6,6 +6,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Hash Table
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/Sunwoo0110/Algorithm/tree/master/0001-two-sum) |
 | [0003-longest-substring-without-repeating-characters](https://github.com/Sunwoo0110/Algorithm/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0242-valid-anagram](https://github.com/Sunwoo0110/Algorithm/tree/master/0242-valid-anagram) |
 | [0347-top-k-frequent-elements](https://github.com/Sunwoo0110/Algorithm/tree/master/0347-top-k-frequent-elements) |
@@ -31,6 +32,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/Sunwoo0110/Algorithm/tree/master/0001-two-sum) |
 | [0215-kth-largest-element-in-an-array](https://github.com/Sunwoo0110/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0347-top-k-frequent-elements](https://github.com/Sunwoo0110/Algorithm/tree/master/0347-top-k-frequent-elements) |
 | [0560-subarray-sum-equals-k](https://github.com/Sunwoo0110/Algorithm/tree/master/0560-subarray-sum-equals-k) |
