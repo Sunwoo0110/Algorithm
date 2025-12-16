@@ -3,16 +3,15 @@ class Solution:
         dig_list, let_list = [], []
 
         for log in logs:
-            log_list = log.split(" ")
-            word = log_list[1]
-
-            if word.isdigit():
+            id_, content = log.split(" ", 1)
+            if content[0].isdigit():
                 dig_list.append(log)
             else:
-                let_list.append(log)
-        
-        let_list.sort(key = lambda x: (x.split(" ")[1:], x.split(" ")[0]))
-        return let_list+dig_list
+                let_list.append((content, id_, log))
+
+        let_list.sort()
+
+        return [log for _, _, log in let_list]+dig_list
 
 
 
