@@ -17,6 +17,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/Sunwoo0110/Algorithm/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0125-valid-palindrome](https://github.com/Sunwoo0110/Algorithm/tree/master/0125-valid-palindrome) |
 | [0151-reverse-words-in-a-string](https://github.com/Sunwoo0110/Algorithm/tree/master/0151-reverse-words-in-a-string) |
 | [0242-valid-anagram](https://github.com/Sunwoo0110/Algorithm/tree/master/0242-valid-anagram) |
 | [0424-longest-repeating-character-replacement](https://github.com/Sunwoo0110/Algorithm/tree/master/0424-longest-repeating-character-replacement) |
@@ -107,5 +108,6 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Two Pointers
 |  |
 | ------- |
+| [0125-valid-palindrome](https://github.com/Sunwoo0110/Algorithm/tree/master/0125-valid-palindrome) |
 | [0151-reverse-words-in-a-string](https://github.com/Sunwoo0110/Algorithm/tree/master/0151-reverse-words-in-a-string) |
 <!---LeetCode Topics End-->
