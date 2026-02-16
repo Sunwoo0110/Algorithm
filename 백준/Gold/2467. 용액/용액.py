@@ -12,13 +12,13 @@ def main():
     answer = [0, 0]
     
     while left < right:
-        total = abs(arr[right]+arr[left])
+        total = arr[right]+arr[left]
         
-        if total <= gap:
+        if abs(total) <= gap:
             answer = [arr[left], arr[right]]
-            gap = total
+            gap = abs(total)
         
-        if abs(arr[left]+arr[right-1]) < abs(arr[left+1]+arr[right]):
+        if total > 0:
             right -= 1
         else:
             left += 1
