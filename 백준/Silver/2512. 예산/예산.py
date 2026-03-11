@@ -9,6 +9,7 @@ def main():
     
     left, right = 1, max(arr)
     answer = 0
+    budget = 0
     
     while left <= right:
         mid = (left+right)//2
@@ -21,12 +22,16 @@ def main():
                 total += mid
         
         if total <= m:
-            answer = mid
-            left = mid + 1
+            left = mid+1
         else:
             right = mid-1
-                
+            
+        if total <= m and total > budget:
+            answer = mid
+            budget = total
+    
     print(answer)
+    return answer
     
 if __name__ == "__main__":
     main()
